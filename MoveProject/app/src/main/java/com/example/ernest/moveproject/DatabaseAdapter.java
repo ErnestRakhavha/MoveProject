@@ -1,5 +1,6 @@
 package com.example.ernest.moveproject;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -46,5 +47,13 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         }
     }
 
-   // public Cursor addCounters()
+   /* public Cursor addCounters(int redCounter, int greenCounter)
+   {
+       ContentValues values = new ContentValues();
+       values.put(Counter.RED_COUNTER,redCounter);
+       values.put(Counter.GREEN_COUNTER,redCounter);
+       db.insert(Counter.TABLE_NAME,null,values);
+
+   }
+   */
 }
