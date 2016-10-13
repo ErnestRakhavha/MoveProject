@@ -108,5 +108,4 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
         return true;
     }
 
-
 }

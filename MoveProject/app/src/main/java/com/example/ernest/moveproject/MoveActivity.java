@@ -42,7 +42,7 @@ public class MoveActivity extends AppCompatActivity {
 
                     Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     vibrator.vibrate(100);
-
+                    //imageView1.setVisibility(View.INVISIBLE);
                     return true;
                 }
             });
@@ -60,6 +60,7 @@ public class MoveActivity extends AppCompatActivity {
 
                     Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     vibrator.vibrate(100);
+                    //imageView2.setVisibility(View.INVISIBLE);
                     return true;
                 }
             });
@@ -76,6 +77,7 @@ public class MoveActivity extends AppCompatActivity {
 
                     Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     vibrator.vibrate(100);
+                    //imageView3.setVisibility(View.INVISIBLE);
                     return true;
                 }
             });
