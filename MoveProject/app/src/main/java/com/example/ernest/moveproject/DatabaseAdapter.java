@@ -36,7 +36,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         }catch (SQLiteException e)
         {
             e.printStackTrace();
-            Log.e(TAG,"SQLiteMessage: " + e.getMessage().toString());
+            Log.e(TAG,"Database Error : " + e.getMessage().toString());
         }
     }
 
@@ -45,18 +45,31 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
         if(newVersion > oldVersion)
         {
-            db.execSQL("ALTER TABLE COUNTER ADD COLUMN redCounter");
-            db.execSQL("ALTER TABLE COUNTER ADD COLUMN greenCounter");
+            try {
+                db.execSQL("ALTER TABLE COUNTER ADD COLUMN redCounter");
+                db.execSQL("ALTER TABLE COUNTER ADD COLUMN greenCounter");
+            }
+            catch (SQLiteException e){
+                e.printStackTrace();
+                Log.e(TAG,"Database Error : " + e.getMessage().toString());
+            }
         }
     }
 
-    public void addCounters(float redCounter, float greenCounter)
+    public void addRedCounters(int redCounter)
    {
        ContentValues values = new ContentValues();
        values.put(Counter.RED_COUNTER,redCounter);
-       values.put(Counter.GREEN_COUNTER,redCounter);
        database.insert(Counter.TABLE_NAME,null,values);
    }
+
+    public void addGreenCounters(int greenCounter)
+    {
+        ContentValues values = new ContentValues();
+        values.put(Counter.GREEN_COUNTER,greenCounter);
+        database.insert(Counter.TABLE_NAME,null,values);
+
+    }
 
     public ArrayList<String> getAllDropCounts()
     {

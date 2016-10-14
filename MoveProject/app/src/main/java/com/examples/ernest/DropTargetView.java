@@ -19,6 +19,8 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
 
     private boolean mDropped;
     private DatabaseAdapter DBAdapter;
+    private int redDropCount;
+    private int greenDropCount;
 
     public DropTargetView(Context context) {
         super(context);
@@ -101,7 +103,15 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                 //Set our image from the Object passed with the DragEvent
                 setImageDrawable((Drawable) event.getLocalState());
 
-                //cast
+                if (!mDropped)
+                {
+                    redDropCount++;
+                    greenDropCount++;
+
+                    DBAdapter.addRedCounters(redDropCount);
+                    DBAdapter.addGreenCounters(greenDropCount);
+                }
+                
                 mDropped = true;
                 break;
             default:
