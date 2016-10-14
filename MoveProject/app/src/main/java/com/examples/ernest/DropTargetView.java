@@ -111,7 +111,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                     DBAdapter.addRedCounters(redDropCount);
                     DBAdapter.addGreenCounters(greenDropCount);
                 }
-                
+
                 mDropped = true;
                 break;
             default:
