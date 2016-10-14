@@ -1,6 +1,7 @@
 package com.example.ernest.moveproject;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +22,7 @@ public class MoveActivity extends AppCompatActivity {
         private float posX;
         private float posY;
         private DatabaseAdapter DBAdapter;
+    private SQLiteDatabase db;
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public class MoveActivity extends AppCompatActivity {
             imageView3 = (ImageView) findViewById(R.id.image3);
 
             DBAdapter = new DatabaseAdapter(this);
+            DBAdapter.exportDatabase(this);
+            DBAdapter.onOpen(db);
+            //DBAdapter.addGreenCounters(77);
             imageView1.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
