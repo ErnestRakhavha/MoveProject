@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * Created by Ernest on 2016/10/13.
  */
@@ -18,6 +20,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "CREATE TABLE COUNTER (ID INTEGER AUTOINCREMENT," +
                                                 "redCounter INTEGER,greenCounter INTEGER,PRIMARY KEY(ID));";
     private static final String TAG = "DatabaseAdapter";
+    SQLiteDatabase database;
 
 
     DatabaseAdapter(Context context)
@@ -47,13 +50,28 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         }
     }
 
-   /* public Cursor addCounters(int redCounter, int greenCounter)
+   /* public bool addCounters(int redCounter, int greenCounter)
    {
        ContentValues values = new ContentValues();
        values.put(Counter.RED_COUNTER,redCounter);
        values.put(Counter.GREEN_COUNTER,redCounter);
-       db.insert(Counter.TABLE_NAME,null,values);
+       database.insert(Counter.TABLE_NAME,null,values);
+       return true;
 
    }
+
+
    */
+    public ArrayList<String> getAllDropCounts()
+    {
+        ArrayList<String> count_list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("select * from " + Counter.TABLE_NAME,null);
+        cursor.moveToNext();
+
+        if (cursor != null)
+        {
+            count_list.add(cursor.getString(cursor.getColumnIndex(Counter.RED_COUNTER)));
+        }
+        return count_list;
+    }
 }
