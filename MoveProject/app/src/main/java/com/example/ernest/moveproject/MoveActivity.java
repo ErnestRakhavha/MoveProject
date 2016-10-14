@@ -20,7 +20,7 @@ public class MoveActivity extends AppCompatActivity {
         private float mLastTouchX, mLastTouchY;
         private float posX;
         private float posY;
-
+        private DatabaseAdapter DBAdapter;
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class MoveActivity extends AppCompatActivity {
             imageView2 = (ImageView) findViewById(R.id.image2);
             imageView3 = (ImageView) findViewById(R.id.image3);
 
+            DBAdapter = new DatabaseAdapter(this);
             imageView1.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
@@ -61,6 +62,7 @@ public class MoveActivity extends AppCompatActivity {
                     Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     vibrator.vibrate(100);
                     //imageView2.setVisibility(View.INVISIBLE);
+
                     return true;
                 }
             });

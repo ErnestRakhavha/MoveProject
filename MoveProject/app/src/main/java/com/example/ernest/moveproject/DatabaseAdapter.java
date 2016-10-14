@@ -50,18 +50,14 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         }
     }
 
-   /* public bool addCounters(int redCounter, int greenCounter)
+    public void addCounters(float redCounter, float greenCounter)
    {
        ContentValues values = new ContentValues();
        values.put(Counter.RED_COUNTER,redCounter);
        values.put(Counter.GREEN_COUNTER,redCounter);
        database.insert(Counter.TABLE_NAME,null,values);
-       return true;
-
    }
 
-
-   */
     public ArrayList<String> getAllDropCounts()
     {
         ArrayList<String> count_list = new ArrayList<>();

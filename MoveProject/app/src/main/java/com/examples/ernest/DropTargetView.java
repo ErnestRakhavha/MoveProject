@@ -10,12 +10,15 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.ernest.moveproject.DatabaseAdapter;
+
 /**
  * Created by Ernest on 2016/10/13.
  */
 public class DropTargetView extends ImageView implements View.OnDragListener {
 
     private boolean mDropped;
+    private DatabaseAdapter DBAdapter;
 
     public DropTargetView(Context context) {
         super(context);
@@ -98,6 +101,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                 //Set our image from the Object passed with the DragEvent
                 setImageDrawable((Drawable) event.getLocalState());
 
+                //cast
                 mDropped = true;
                 break;
             default:
