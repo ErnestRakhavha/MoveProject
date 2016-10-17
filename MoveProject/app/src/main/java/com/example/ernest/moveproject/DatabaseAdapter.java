@@ -33,10 +33,12 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     DatabaseAdapter(Context context)
     {
         super(context,DATABASE_NAME,null,DATABSAE_VERSION);
+        database = getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         Log.e(TAG,"in the DatabaseAdapter onCreate() method");
 
         try
@@ -67,7 +69,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     }
     public void createCountersTable(SQLiteDatabase db)
     {
-        db = getWritableDatabase();
+        //database = getWritableDatabase();
 
         String query = "CREATE TABLE " + Counter.TABLE_NAME
                        +" (id PRIMARY KEY AUTOINCREMENT,"
@@ -88,6 +90,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
     public long addRedCounters(int redCounter)
    {
+
        SQLiteDatabase db = getWritableDatabase();
 
        ContentValues values = new ContentValues();
@@ -161,6 +164,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
                 Log.d(TAG, "Creating currentDB file...");
                String currentDBPath = context.getDatabasePath(DatabaseAdapter.DATABASE_NAME).toString();
                 File currentDB = new File(currentDBPath);
+                SQLiteDatabase.openDatabase(currentDBPath,null,SQLiteDatabase.NO_LOCALIZED_COLLATORS);
 
                 Log.d(TAG, "Creating backup file...");
                 Date currentDate = new Date();

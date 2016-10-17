@@ -21,7 +21,7 @@ public class MoveActivity extends AppCompatActivity {
         private float mLastTouchX, mLastTouchY;
         private float posX;
         private float posY;
-        private DatabaseAdapter DBAdapter;
+        private DatabaseAdapter dbAdapter;
     private SQLiteDatabase db;
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -32,9 +32,12 @@ public class MoveActivity extends AppCompatActivity {
             imageView2 = (ImageView) findViewById(R.id.image2);
             imageView3 = (ImageView) findViewById(R.id.image3);
 
-            DBAdapter = new DatabaseAdapter(this);
-            DBAdapter.exportDatabase(this);
-            DBAdapter.onOpen(db);
+            dbAdapter = new DatabaseAdapter(this);
+            dbAdapter.exportDatabase(this);
+
+            long count;
+            count = dbAdapter.addAllCounters(4,3);
+
             //DBAdapter.addGreenCounters(77);
             imageView1.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

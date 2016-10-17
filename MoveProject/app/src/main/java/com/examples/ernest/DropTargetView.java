@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -51,7 +52,85 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
         setOnDragListener(this);
     }
 
-    @Override
+    public void onCircleDragStarted(DragEvent event)
+    {
+        PropertyValuesHolder pvhX, pvhY;
+
+        pvhX = PropertyValuesHolder.ofFloat("scaleX",0.5f);
+        pvhY = PropertyValuesHolder.ofFloat("scaleY",0.5f);
+        ObjectAnimator.ofPropertyValuesHolder(this, pvhX, pvhY).start();
+
+        setImageDrawable(null);
+        mDropped = false;
+
+    }
+
+    public void onCircleDragEnded(DragEvent event)
+    {
+       PropertyValuesHolder pvhX, pvhY;
+
+        if (!mDropped) {
+            Log.e(TAG, "drag ended here");
+
+            pvhX = PropertyValuesHolder.ofFloat("scaleX", 1f);
+            pvhY = PropertyValuesHolder.ofFloat("scaleY", 1f);
+            ObjectAnimator.ofPropertyValuesHolder(this,
+                    pvhX, pvhY).start();
+            mDropped = false;
+        }
+
+    }
+
+    public void onCircleDragEntered(DragEvent event)
+    {
+        PropertyValuesHolder pvhX, pvhY;
+
+        Log.e(TAG,"drag entered here");
+        pvhX = PropertyValuesHolder.ofFloat("scaleX", 0.75f);
+        pvhY = PropertyValuesHolder.ofFloat("scaleY", 0.75f);
+        ObjectAnimator.ofPropertyValuesHolder(this,
+                pvhX, pvhY).start();
+    }
+
+    public void onCircleDragExited(DragEvent event)
+    {
+        PropertyValuesHolder pvhX, pvhY;
+
+        Log.e(TAG,"dropped here");
+        Keyframe frame0 = Keyframe.ofFloat(0f, 0.75f);
+        Keyframe frame1 = Keyframe.ofFloat(0.5f, 0f);
+        Keyframe frame2 = Keyframe.ofFloat(1f, 0.5f);
+        pvhX = PropertyValuesHolder.ofKeyframe("scaleX",
+                frame0, frame1, frame2);
+        pvhY = PropertyValuesHolder.ofKeyframe("scaleY",
+                frame0, frame1, frame2);
+        ObjectAnimator.ofPropertyValuesHolder(this,
+                pvhX, pvhY).start();
+        //Set our image from the Object passed with the DragEvent
+        setImageDrawable((Drawable) event.getLocalState());
+
+    }
+
+    public void onCirleDropped(DragEvent event)
+    {
+
+        PropertyValuesHolder pvhX, pvhY;
+        Log.e(TAG,"dropped here");
+        Keyframe frame0 = Keyframe.ofFloat(0f, 0.75f);
+        Keyframe frame1 = Keyframe.ofFloat(0.5f, 0f);
+        Keyframe frame2 = Keyframe.ofFloat(1f, 0.5f);
+        pvhX = PropertyValuesHolder.ofKeyframe("scaleX",
+                frame0, frame1, frame2);
+        pvhY = PropertyValuesHolder.ofKeyframe("scaleY",
+                frame0, frame1, frame2);
+        ObjectAnimator.ofPropertyValuesHolder(this,
+                pvhX, pvhY).start();
+        //Set our image from the Object passed with the DragEvent
+        setImageDrawable((Drawable) event.getLocalState());
+
+    }
+
+   @Override
     public boolean onDrag(View v, DragEvent event) {
 
         Log.e(TAG,"in the onDrag()");
@@ -60,67 +139,35 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
 
         PropertyValuesHolder pvhX, pvhY;
         switch (event.getAction()) {
+
             case DragEvent.ACTION_DRAG_STARTED:
-                //React to a new drag by shrinking the view
-                pvhX = PropertyValuesHolder.ofFloat("scaleX", 0.5f);   //enums/lookup
-                pvhY = PropertyValuesHolder.ofFloat("scaleY", 0.5f);
-                ObjectAnimator.ofPropertyValuesHolder(this,
-                        pvhX, pvhY).start();
-                //Clear the current drop image on a new event
-                setImageDrawable(null);
-                mDropped = false;
+                onCircleDragStarted(event);
+
                 break;
 
-            case DragEvent.ACTION_DRAG_ENDED:
+            case DragEvent.ACTION_DRAG_ENTERED:
                 // React to a drag ending by resetting the view size
                 // if we weren't the drop target.
-                if (!mDropped) {
-                    Log.e(TAG,"drag ended here");
-
-                    pvhX = PropertyValuesHolder.ofFloat("scaleX", 1f);
-                    pvhY = PropertyValuesHolder.ofFloat("scaleY", 1f);
-                    ObjectAnimator.ofPropertyValuesHolder(this,
-                            pvhX, pvhY).start();
-                    mDropped = false;
+                onCircleDragEntered(event);
                     break;
-                }
 
-            case DragEvent.ACTION_DRAG_ENTERED:
+
+            case DragEvent.ACTION_DRAG_ENDED:
                 //React to a drag entering this view by growing slightly
+                onCircleDragEnded(event);
 
-                Log.e(TAG,"drag entered here");
-                pvhX = PropertyValuesHolder.ofFloat("scaleX", 0.75f);
-                pvhY = PropertyValuesHolder.ofFloat("scaleY", 0.75f);
-                ObjectAnimator.ofPropertyValuesHolder(this,
-                        pvhX, pvhY).start();
                 break;
 
             case DragEvent.ACTION_DRAG_EXITED:
                 //React to a drag leaving by returning to previous size
-                Log.e(TAG,"drag exited ");
-                pvhX = PropertyValuesHolder.ofFloat("scaleX", 0.5f);
-                pvhY = PropertyValuesHolder.ofFloat("scaleY", 0.5f);
-                ObjectAnimator.ofPropertyValuesHolder(this,
-                        pvhX, pvhY).start();
+                onCircleDragExited(event);
                 break;
 
             case DragEvent.ACTION_DROP:
 
                 //This animation shrinks the view briefly down to nothing
                 // and then back.
-                Log.e(TAG,"dropped here");
-                Keyframe frame0 = Keyframe.ofFloat(0f, 0.75f);
-                Keyframe frame1 = Keyframe.ofFloat(0.5f, 0f);
-                Keyframe frame2 = Keyframe.ofFloat(1f, 0.5f);
-                pvhX = PropertyValuesHolder.ofKeyframe("scaleX",
-                        frame0, frame1, frame2);
-                pvhY = PropertyValuesHolder.ofKeyframe("scaleY",
-                        frame0, frame1, frame2);
-                ObjectAnimator.ofPropertyValuesHolder(this,
-                        pvhX, pvhY).start();
-                //Set our image from the Object passed with the DragEvent
-                setImageDrawable((Drawable) event.getLocalState());
-
+                onCirleDropped(event);
                 /*
                 if (!mDropped)
                 {
