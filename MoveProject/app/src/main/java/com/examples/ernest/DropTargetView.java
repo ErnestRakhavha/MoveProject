@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
     private int red = 0;
     private int green = 0;
     private int mDragViewId;
+    private Animation animation;
+    private ImageView starImageView;
 
     public DropTargetView(Context context) {
         super(context);
@@ -111,7 +115,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
 
     }
 
-    public void onCirleDropped(DragEvent event)
+    public void onCircleDropped(DragEvent event)
     {
 
         PropertyValuesHolder pvhX, pvhY;
@@ -151,11 +155,9 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                 onCircleDragEntered(event);
                     break;
 
-
             case DragEvent.ACTION_DRAG_ENDED:
                 //React to a drag entering this view by growing slightly
                 onCircleDragEnded(event);
-
                 break;
 
             case DragEvent.ACTION_DRAG_EXITED:
@@ -164,32 +166,26 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                 break;
 
             case DragEvent.ACTION_DROP:
-
                 //This animation shrinks the view briefly down to nothing
                 // and then back.
-                onCirleDropped(event);
-                /*
-                if (!mDropped)
-                {
-                    redDropCount++;
-                    greenDropCount++;
-
-                    DBAdapter.addRedCounters(redDropCount);
-                    DBAdapter.addGreenCounters(greenDropCount);
-                    Toast.makeText(getContext(),"Red   : " + redDropCount,Toast.LENGTH_LONG);
-                    Toast.makeText(getContext(),"Green : " + greenDropCount,Toast.LENGTH_LONG);
-
-                }
-                */
-
+                onCircleDropped(event);
                 //mDropped = true;
                 break;
             default:
                 //Ignore events we aren't interested in
-                return false;
+            return false;
         }
 
         return true;
     }
 
+    public void animateStar(ImageView starImageView) {
+
+        animation = AnimationUtils.loadAnimation(getContext(), R.anim.star);
+
+        starImageView = (ImageView) findViewById(R.id.star);
+        starImageView.clearAnimation();
+        starImageView.setImageResource(R.drawable.star);
+        starImageView.startAnimation(animation);
+    }
 }

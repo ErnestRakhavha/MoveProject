@@ -12,7 +12,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.examples.ernest.DropTargetView;
 
 public class MoveActivity extends AppCompatActivity {
 
@@ -22,7 +26,11 @@ public class MoveActivity extends AppCompatActivity {
         private float posX;
         private float posY;
         private DatabaseAdapter dbAdapter;
-    private SQLiteDatabase db;
+        private SQLiteDatabase db;
+        private Animation animation;
+        private DropTargetView targetView;
+        private ImageView starImageView;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -37,7 +45,16 @@ public class MoveActivity extends AppCompatActivity {
 
             long count;
             count = dbAdapter.addAllCounters(4,3);
+           // public void animateStar(ImageView starImageView)
+   // {
+            animation = AnimationUtils.loadAnimation(this, R.anim.star);
 
+
+                starImageView = (ImageView) findViewById(R.id.star);
+                starImageView.clearAnimation();
+                starImageView.setImageResource(R.drawable.star);
+                starImageView.startAnimation(animation);
+           // }
             //DBAdapter.addGreenCounters(77);
             imageView1.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

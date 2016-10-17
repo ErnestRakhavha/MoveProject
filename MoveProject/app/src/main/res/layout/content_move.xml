@@ -74,6 +74,12 @@
             android:layout_weight="1"
             android:src="@drawable/oval3"/>
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star"
+            android:id="@+id/star"/>
+
     </LinearLayout>
 
 </RelativeLayout>
