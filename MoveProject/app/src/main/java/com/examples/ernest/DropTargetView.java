@@ -16,8 +16,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.ernest.moveproject.Basket;
 import com.example.ernest.moveproject.DatabaseAdapter;
 import com.example.ernest.moveproject.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by Ernest on 2016/10/13.
@@ -34,6 +37,9 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
     private int mDragViewId;
     private Animation animation;
     private ImageView starImageView;
+
+    private ArrayList<Integer> happyMoodBasket;
+    private ArrayList<Integer> sadMoodBasket;
 
     public DropTargetView(Context context) {
         super(context);
@@ -184,6 +190,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
         animation = AnimationUtils.loadAnimation(getContext(), R.anim.star);
 
         starImageView = (ImageView) findViewById(R.id.star);
+
         starImageView.clearAnimation();
         starImageView.setImageResource(R.drawable.star);
         starImageView.startAnimation(animation);

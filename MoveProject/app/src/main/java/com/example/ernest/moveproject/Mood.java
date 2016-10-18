@@ -6,8 +6,10 @@ package com.example.ernest.moveproject;
 
 public class Mood {
 
-    private static final String HAPPY = "happy";
-    private static final String SAD = "sad";
-    private static final int MOOD_COUNTER = 0;
-    private static final String TABLE_NAME = "mood";
+    public static final String HAPPY = "happy";
+    public static final String SAD = "sad";
+    public static final int MOOD_COUNTER = 0;
+    public static final String TABLE_NAME = "mood";
+    public static final String BASKET_LABEL = "Basket_label";
+
 }

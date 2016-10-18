@@ -22,25 +22,26 @@ import java.util.Date;
  */
 
 public class DatabaseAdapter extends SQLiteOpenHelper {
-    private static final int DATABSAE_VERSION =2 ;
-    private static final String DATABASE_NAME = "CounterDB";
-    private static final String TAG = "DatabaseAdapter";
-    SQLiteDatabase database;
 
-    DatabaseAdapter(Context context)
+    private static final int DATABSAE_VERSION =2 ;
+    private static final String DATABASE_NAME = "CounterDB.sqlite";
+    private static final String TAG = "DatabaseAdapter";
+    private static DatabaseAdapter instance;
+    private static final String TEST_STRING = "test";
+
+    public DatabaseAdapter(Context context)
     {
         super(context,DATABASE_NAME,null,DATABSAE_VERSION);
-        database = getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        Log.e(TAG,"in the DatabaseAdapter onCreate() method");
+        Log.e(TAG,"In the DatabaseAdapter onCreate() method");
 
         try
         {
-            createCountersTable(db);
+            createMoodTable(db);
         }
         catch (SQLiteException e)
         {
@@ -52,101 +53,64 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.e(TAG,"in the Upgrade()");
-        if(newVersion > oldVersion)
-        {
+
+        if(newVersion <= oldVersion) {
             try {
-                db.execSQL("ALTER TABLE COUNTER ADD COLUMN redCounter");
-                db.execSQL("ALTER TABLE COUNTER ADD COLUMN greenCounter");
-            }
-            catch (SQLiteException e){
+                db.execSQL("ALTER TABLE " + Mood.TABLE_NAME + " ADD COLUMN " + Mood.BASKET_LABEL);
+                db.execSQL("ALTER TABLE " + Mood.TABLE_NAME + " ADD COLUMN " + Mood.HAPPY);
+                db.execSQL("ALTER TABLE " + Mood.TABLE_NAME + " ADD COLUMN greenCounter");
+            } catch (SQLiteException e) {
                 e.printStackTrace();
-                Log.e(TAG,"Database Error : " + e.getMessage().toString());
+                Log.e(TAG, "Database Error : " + e.getMessage().toString());
             }
         }
+
     }
 
-    public void createMoodTable(int happy, int sad)
+    public void createMoodTable(SQLiteDatabase db)
     {
-        String query = "CREATE "
-    }
-    public void createCountersTable(SQLiteDatabase db)
-    {
-        //database = getWritableDatabase();
+        Log.e(TAG,"Creating a Mood table");
+       // db = this.getWritableDatabase();
 
-        String query = "CREATE TABLE " + Mood.TABLE_NAME
-                       +" (id PRIMARY KEY AUTOINCREMENT,"
-                       + Counter.RED_COUNTER + " INTEGER,"
-                       + Counter.GREEN_COUNTER + " INTEGER);";
+        String query = "CREATE TABLE "   + Mood.TABLE_NAME +
+                       " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + Mood.BASKET_LABEL
+                       + " TEXT, " + Mood.HAPPY + " INTEGER, "
+                       + Mood.SAD + " INTEGER );";
         try
         {
-
             db.execSQL(query);
         }
         catch (SQLiteException e)
         {
             e.printStackTrace();
-            Log.e(TAG,"Database Error : " + e.getMessage().toString());
+            Log.e(TAG,"Error : " + e.getMessage().toString());
         }
+        Log.e(TAG,"Moods table successfully created");
+
 
     }
 
-
-
-    public long addRedCounters(int redCounter)
-   {
-
-       SQLiteDatabase db = getWritableDatabase();
-
-       ContentValues values = new ContentValues();
-       values.put(Counter.RED_COUNTER,redCounter);
-
-      return db.insert(Counter.TABLE_NAME,null,values);
-   }
-
-    public long addGreenCounters(int greenCounter)
+    public static synchronized DatabaseAdapter getInstance(Context context)
     {
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(Counter.GREEN_COUNTER,greenCounter);
-
-        return db.insert(Counter.TABLE_NAME,null,values);
-
-    }
-
-    public long addAllCounters(int redCounter, int greenCounter)
-    {
-        SQLiteDatabase db = getWritableDatabase();
-
-        long red = addRedCounters(redCounter);
-        long green = addGreenCounters(greenCounter);
-
-        ContentValues values = new ContentValues();
-        values.put(Counter.RED_COUNTER,red);
-        values.put(Counter.GREEN_COUNTER,green);
-
-        return db.insert(Counter.TABLE_NAME,null,values);
-    }
-
-   /* public long getRedCountId( int id)
-    {
-        SQLiteDatabase db = getReadableDatabase();
-        //Cursor cursor = db.rawQuery("SELECT id from " + Counter.TABLE_NAME,"WHERE" + id +" = ?",new String[]{getRedCountId()});
-    }
-   */
-
-    public ArrayList<String> getAllDropCounts()
-    {
-        ArrayList<String> count_list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("select * from " + Counter.TABLE_NAME,null);
-        cursor.moveToNext();
-
-        if (cursor != null)
+        if (instance == null)
         {
-            count_list.add(cursor.getString(cursor.getColumnIndex(Counter.RED_COUNTER)));
+             instance = new DatabaseAdapter(context);
         }
-        return count_list;
+        return instance;
     }
+
+    public void insertData()//(String basketLabel,int happy,int sad)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Mood.BASKET_LABEL, "Default value");
+        values.put(Mood.HAPPY,1);
+        values.put(Mood.SAD,2);
+       // db.insert(Mood.TABLE_NAME,null,values);
+
+        //return true;
+    }
+
     public static void exportDatabase(Context context)
     {
         Log.d(TAG, "Exporting database");
@@ -168,7 +132,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
                 Log.d(TAG, "Creating currentDB file...");
                String currentDBPath = context.getDatabasePath(DatabaseAdapter.DATABASE_NAME).toString();
                 File currentDB = new File(currentDBPath);
-                SQLiteDatabase.openDatabase(currentDBPath,null,SQLiteDatabase.NO_LOCALIZED_COLLATORS);
+                //SQLiteDatabase.openDatabase(currentDBPath,null,SQLiteDatabase.NO_LOCALIZED_COLLATORS);
 
                 Log.d(TAG, "Creating backup file...");
                 Date currentDate = new Date();

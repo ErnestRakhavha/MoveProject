@@ -1,6 +1,7 @@
 package com.example.ernest.moveproject;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -21,7 +22,7 @@ import com.examples.ernest.DropTargetView;
 
 import java.util.ArrayList;
 
-public class MoveActivity extends AppCompatActivity {
+public class MoveActivity extends AppCompatActivity{
 
         private static final String TAG = "MainActivity" ;
         private ImageView imageView1, imageView2, imageView3;
@@ -33,7 +34,7 @@ public class MoveActivity extends AppCompatActivity {
         private Animation animation;
         private DropTargetView targetView;
         private ImageView starImageView;
-        private ArrayList<Basket> baskets;
+        private ArrayList<Integer> baskets;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -44,21 +45,26 @@ public class MoveActivity extends AppCompatActivity {
             imageView2 = (ImageView) findViewById(R.id.image2);
             imageView3 = (ImageView) findViewById(R.id.image3);
 
-            dbAdapter = new DatabaseAdapter(this);
-            dbAdapter.exportDatabase(this);
+            dbAdapter = new DatabaseAdapter(getApplicationContext());
+            dbAdapter.exportDatabase(getApplicationContext());
+
+            dbAdapter.getWritableDatabase();
+            //dbAdapter.insertData("tested ",1,0);
+            //dbAdapter.insertData();
 
             baskets = new ArrayList<>();
-            if(baskets.isEmpty())
+            baskets.add(1);
+            if(!baskets.isEmpty())
             {
-                Toast.makeText(getApplicationContext(),"Basket still empty for now",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"How are you today ?",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Please rate your mood ",Toast.LENGTH_LONG).show();
             }
 
             long count;
-            count = dbAdapter.addAllCounters(4,3);
+
            // public void animateStar(ImageView starImageView)
 
             animation = AnimationUtils.loadAnimation(this, R.anim.star);
-
 
                 starImageView = (ImageView) findViewById(R.id.star);
                 starImageView.clearAnimation();
