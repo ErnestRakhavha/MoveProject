@@ -15,8 +15,11 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.examples.ernest.DropTargetView;
+
+import java.util.ArrayList;
 
 public class MoveActivity extends AppCompatActivity {
 
@@ -30,6 +33,7 @@ public class MoveActivity extends AppCompatActivity {
         private Animation animation;
         private DropTargetView targetView;
         private ImageView starImageView;
+        private ArrayList<Basket> baskets;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -43,10 +47,16 @@ public class MoveActivity extends AppCompatActivity {
             dbAdapter = new DatabaseAdapter(this);
             dbAdapter.exportDatabase(this);
 
+            baskets = new ArrayList<>();
+            if(baskets.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(),"Basket still empty for now",Toast.LENGTH_LONG).show();
+            }
+
             long count;
             count = dbAdapter.addAllCounters(4,3);
            // public void animateStar(ImageView starImageView)
-   // {
+
             animation = AnimationUtils.loadAnimation(this, R.anim.star);
 
 
@@ -54,7 +64,7 @@ public class MoveActivity extends AppCompatActivity {
                 starImageView.clearAnimation();
                 starImageView.setImageResource(R.drawable.star);
                 starImageView.startAnimation(animation);
-           // }
+
             //DBAdapter.addGreenCounters(77);
             imageView1.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

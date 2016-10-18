@@ -24,11 +24,8 @@ import java.util.Date;
 public class DatabaseAdapter extends SQLiteOpenHelper {
     private static final int DATABSAE_VERSION =2 ;
     private static final String DATABASE_NAME = "CounterDB";
-    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS COUNTER (ID INTEGER AUTOINCREMENT," +
-                                                "redCounter INTEGER,greenCounter INTEGER,PRIMARY KEY(ID));";
     private static final String TAG = "DatabaseAdapter";
     SQLiteDatabase database;
-
 
     DatabaseAdapter(Context context)
     {
@@ -67,11 +64,16 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
             }
         }
     }
+
+    public void createMoodTable(int happy, int sad)
+    {
+        String query = "CREATE "
+    }
     public void createCountersTable(SQLiteDatabase db)
     {
         //database = getWritableDatabase();
 
-        String query = "CREATE TABLE " + Counter.TABLE_NAME
+        String query = "CREATE TABLE " + Mood.TABLE_NAME
                        +" (id PRIMARY KEY AUTOINCREMENT,"
                        + Counter.RED_COUNTER + " INTEGER,"
                        + Counter.GREEN_COUNTER + " INTEGER);";
@@ -87,6 +89,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         }
 
     }
+
+
 
     public long addRedCounters(int redCounter)
    {

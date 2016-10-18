@@ -50,7 +50,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/textView"
         android:layout_alignParentStart="true">
 
         <ImageView
@@ -74,12 +75,27 @@
             android:layout_weight="1"
             android:src="@drawable/oval3"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/star"
-            android:id="@+id/star"/>
-
     </LinearLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="49dp">
+
+    </GridLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star"
+        android:id="@+id/star"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="110dp" />
+
 
 </RelativeLayout>
