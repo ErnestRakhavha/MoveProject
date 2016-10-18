@@ -70,12 +70,12 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     public void createMoodTable(SQLiteDatabase db)
     {
         Log.e(TAG,"Creating a Mood table");
-       // db = this.getWritableDatabase();
+        // db = this.getWritableDatabase();
 
         String query = "CREATE TABLE "   + Mood.TABLE_NAME +
-                       " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + Mood.BASKET_LABEL
-                       + " TEXT, " + Mood.HAPPY + " INTEGER, "
-                       + Mood.SAD + " INTEGER );";
+                " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + Mood.BASKET_LABEL
+                + " TEXT, " + Mood.HAPPY + " INTEGER, "
+                + Mood.SAD + " INTEGER );";
         try
         {
             db.execSQL(query);
@@ -94,7 +94,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     {
         if (instance == null)
         {
-             instance = new DatabaseAdapter(context);
+            instance = new DatabaseAdapter(context);
         }
         return instance;
     }
@@ -106,7 +106,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         values.put(Mood.BASKET_LABEL, "Default value");
         values.put(Mood.HAPPY,1);
         values.put(Mood.SAD,2);
-       // db.insert(Mood.TABLE_NAME,null,values);
+        // db.insert(Mood.TABLE_NAME,null,values);
 
         //return true;
     }
@@ -130,7 +130,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
 
                 Log.d(TAG, "Creating currentDB file...");
-               String currentDBPath = context.getDatabasePath(DatabaseAdapter.DATABASE_NAME).toString();
+                String currentDBPath = context.getDatabasePath(DatabaseAdapter.DATABASE_NAME).toString();
                 File currentDB = new File(currentDBPath);
                 //SQLiteDatabase.openDatabase(currentDBPath,null,SQLiteDatabase.NO_LOCALIZED_COLLATORS);
 
