@@ -6,6 +6,7 @@ import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.support.v7.*;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
@@ -19,9 +20,10 @@ import com.example.ernest.moveproject.R;
 import java.util.ArrayList;
 
 /**
- * Created by Ernest on 2016/10/13.
+ * Created by Ernest on 2016/10/18.
  */
-public class DropTargetView extends ImageView implements View.OnDragListener {
+public class DropTargetView extends ImageView implements View.OnDragListener{
+
 
     private static final String TAG = "DropTargetView";
     private boolean mDropped;
@@ -73,7 +75,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
 
     public void onCircleDragEnded(DragEvent event)
     {
-       PropertyValuesHolder pvhX, pvhY;
+        PropertyValuesHolder pvhX, pvhY;
 
         if (!mDropped) {
             Log.e(TAG, "drag ended here");
@@ -113,7 +115,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
         ObjectAnimator.ofPropertyValuesHolder(this,
                 pvhX, pvhY).start();
         //Set our image from the Object passed with the DragEvent
-        setImageDrawable((Drawable) event.getLocalState());
+       // setImageDrawable((Drawable) event.getLocalState());
 
     }
 
@@ -134,12 +136,13 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
         //Set our image from the Object passed with the DragEvent
         setImageDrawable((Drawable) event.getLocalState());
 
+
     }
 
-   @Override
+    @Override
     public boolean onDrag(View v, DragEvent event) {
 
-        Log.e(TAG,"in the onDrag()");
+        Log.e(TAG, "in the onDrag()");
         //BitmapDrawable dragView = (BitmapDrawable)event.getLocalState();
         //ImageView dragView = (ImageView)event.getLocalState();
 
@@ -155,7 +158,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                 // React to a drag ending by resetting the view size
                 // if we weren't the drop target.
                 onCircleDragEntered(event);
-                    break;
+                break;
 
             case DragEvent.ACTION_DRAG_ENDED:
                 //React to a drag entering this view by growing slightly
@@ -175,7 +178,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
                 break;
             default:
                 //Ignore events we aren't interested in
-            return false;
+                return false;
         }
 
         return true;
@@ -191,4 +194,6 @@ public class DropTargetView extends ImageView implements View.OnDragListener {
         starImageView.setImageResource(R.drawable.star);
         starImageView.startAnimation(animation);
     }
+
+
 }

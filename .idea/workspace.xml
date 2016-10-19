@@ -2,13 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7294a7e-eb3f-476e-acfe-0687aa2fc962" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\.idea\dbnavigator.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoveProject/.idea/gradle.xml" afterPath="$PROJECT_DIR$/MoveProject/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoveProject/.idea/misc.xml" afterPath="$PROJECT_DIR$/MoveProject/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoveProject/.idea/modules.xml" afterPath="$PROJECT_DIR$/MoveProject/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoveProject/.idea/vcs.xml" afterPath="$PROJECT_DIR$/MoveProject/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Moveproject/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\DragTest\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\DragTest\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\DragTest\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\DragTest\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\DragTest\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\MoveProject\DragTest\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\runConfigurations.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\proguard-rules.pro" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\androidTest\java\com\example\ernest\moveproject\ApplicationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\java\com\example\ernest\moveproject\DatabaseAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\java\com\example\ernest\moveproject\Mood.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\java\com\example\ernest\moveproject\MoveActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\java\com\examples\ernest\DropTargetView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\drawable\oval1.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\drawable\oval2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\drawable\oval3.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\drawable\star.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\layout\activity_move.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\layout\content_move.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\menu\menu_move.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\mipmap-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\mipmap-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\mipmap-xhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\values-v21\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\values-w820dp\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\values\colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\values\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\main\res\values\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\app\src\test\java\com\example\ernest\moveproject\ExampleUnitTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\gradle.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\gradle\wrapper\gradle-wrapper.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\gradle\wrapper\gradle-wrapper.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\gradlew" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\gradlew.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject2\settings.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\androidTest\java\com\example\ernest\moveproject\ExampleInstrumentedTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\drawable\animationlist.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\drawable\star1.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\drawable\star2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\drawable\star3.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\drawable\star4.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\gradle\wrapper\gradle-wrapper.jar" afterPath="$PROJECT_DIR$/Moveproject/gradle/wrapper/gradle-wrapper.jar" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\.gitignore" afterPath="$PROJECT_DIR$/Moveproject/.gitignore" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\.idea\.name" afterPath="$PROJECT_DIR$/Moveproject/.idea/.name" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\AndroidManifest.xml" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\java\com\example\ernest\moveproject\DatabaseAdapter.java" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/java/com/example/ernest/moveproject/DatabaseAdapter.java" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\java\com\examples\ernest\DropTargetView.java" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/java/com/examples/ernest/DropTargetView.java" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\test\java\com\example\ernest\moveproject\ExampleUnitTest.java" afterPath="$PROJECT_DIR$/Moveproject/app/src/test/java/com/example/ernest/moveproject/ExampleUnitTest.java" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\java\com\example\ernest\moveproject\Mood.java" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/java/com/example/ernest/moveproject/Mood.java" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\java\com\example\ernest\moveproject\MoveActivity.java" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/java/com/example/ernest/moveproject/MoveActivity.java" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\layout\activity_move.xml" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/res/layout/activity_move.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\build.gradle" afterPath="$PROJECT_DIR$/Moveproject/build.gradle" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\build.gradle" afterPath="$PROJECT_DIR$/Moveproject/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\gradle\wrapper\gradle-wrapper.properties" afterPath="$PROJECT_DIR$/Moveproject/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\gradle.properties" afterPath="$PROJECT_DIR$/Moveproject/gradle.properties" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\.idea\gradle.xml" afterPath="$PROJECT_DIR$/Moveproject/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\.idea\misc.xml" afterPath="$PROJECT_DIR$/Moveproject/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\.idea\modules.xml" afterPath="$PROJECT_DIR$/Moveproject/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\anim\star.xml" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/res/anim/star.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\values\strings.xml" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="C:\GITHUB\moveproject\Moveproject\app\src\main\res\values-v21\styles.xml" afterPath="$PROJECT_DIR$/Moveproject/app/src/main/res/values-v21/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MoveProject/DragTest/.idea/workspace.xml" afterPath="$PROJECT_DIR$/MoveProject/DragTest/.idea/workspace.xml" />
     </list>
     <ignored path="MoveProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,18 +154,19 @@
         <subPane />
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MoveProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Moveproject" />
     <property name="device.picker.selection" value="C6EQ49R4W4DQWWLZ" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -309,23 +383,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24848942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android WiFi ADB" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -339,6 +411,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -348,6 +421,7 @@
       <window_info id="LDAP" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -355,6 +429,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

@@ -1,7 +1,6 @@
 package com.example.ernest.moveproject;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -10,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.support.v4.*;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +22,7 @@ import com.examples.ernest.DropTargetView;
 
 import java.util.ArrayList;
 
-public class MoveActivity extends AppCompatActivity{
+public class MoveActivity extends AppCompatActivity {
 
         private static final String TAG = "MainActivity" ;
         private ImageView imageView1, imageView2, imageView3;
@@ -38,6 +38,7 @@ public class MoveActivity extends AppCompatActivity{
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
+            Log.e(TAG,"In the onCreate() method of the MoveActivity");
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_move);
 
@@ -57,19 +58,19 @@ public class MoveActivity extends AppCompatActivity{
             if(!baskets.isEmpty())
             {
                 Toast.makeText(getApplicationContext(),"How are you today ?",Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),"Please rate your mood ",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Please rate your mood ", Toast.LENGTH_LONG).show();
             }
 
             long count;
 
-           // public void animateStar(ImageView starImageView)
+            // public void animateStar(ImageView starImageView)
 
             animation = AnimationUtils.loadAnimation(this, R.anim.star);
 
-                starImageView = (ImageView) findViewById(R.id.star);
-                starImageView.clearAnimation();
-                starImageView.setImageResource(R.drawable.star);
-                starImageView.startAnimation(animation);
+            starImageView = (ImageView) findViewById(R.id.star);
+            starImageView.clearAnimation();
+            starImageView.setImageResource(R.drawable.star);
+            starImageView.startAnimation(animation);
 
             //DBAdapter.addGreenCounters(77);
             imageView1.setOnLongClickListener(new View.OnLongClickListener() {
@@ -183,4 +184,4 @@ public class MoveActivity extends AppCompatActivity{
     }
     */
 
-}
+    }

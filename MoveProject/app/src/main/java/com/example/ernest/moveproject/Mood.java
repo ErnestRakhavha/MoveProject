@@ -3,7 +3,6 @@ package com.example.ernest.moveproject;
 /**
  * Created by Ernest on 2016/10/18.
  */
-
 public class Mood {
 
     public static final String HAPPY = "happy";
@@ -13,3 +12,4 @@ public class Mood {
     public static final String BASKET_LABEL = "Basket_label";
 
 }
+
