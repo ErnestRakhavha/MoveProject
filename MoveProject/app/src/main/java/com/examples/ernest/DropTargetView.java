@@ -3,6 +3,7 @@ package com.examples.ernest;
 import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -119,7 +120,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener{
 
     }
 
-    public void onCircleDropped(DragEvent event)
+    public void onCircleDropped(DragEvent event, ImageView starImageView)
     {
 
         PropertyValuesHolder pvhX, pvhY;
@@ -133,6 +134,11 @@ public class DropTargetView extends ImageView implements View.OnDragListener{
                 frame0, frame1, frame2);
         ObjectAnimator.ofPropertyValuesHolder(this,
                 pvhX, pvhY).start();
+        starImageView = (ImageView)findViewById(R.id.star);
+        ObjectAnimator starAnimate = ObjectAnimator.ofFloat(starImageView,View.SCALE_X);
+        starAnimate.setRepeatCount(2);
+        starAnimate.setRepeatMode(ValueAnimator.REVERSE);
+        //ObjectAnimator animate = ObjectAnimator.ofFloat(this,ImageView.ROTATION);
         //Set our image from the Object passed with the DragEvent
         setImageDrawable((Drawable) event.getLocalState());
 
@@ -151,6 +157,7 @@ public class DropTargetView extends ImageView implements View.OnDragListener{
 
             case DragEvent.ACTION_DRAG_STARTED:
                 onCircleDragStarted(event);
+
 
                 break;
 
@@ -173,7 +180,10 @@ public class DropTargetView extends ImageView implements View.OnDragListener{
             case DragEvent.ACTION_DROP:
                 //This animation shrinks the view briefly down to nothing
                 // and then back.
-                onCircleDropped(event);
+                onCircleDropped(event,starImageView);
+              //  starImageView = (ImageView) event.getLocalState();
+               // starImageView = (ImageView)findViewById(R.id.star);
+               // starImageView.setVisibility(VISIBLE);
                 //mDropped = true;
                 break;
             default:

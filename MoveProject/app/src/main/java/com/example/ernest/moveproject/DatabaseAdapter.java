@@ -23,7 +23,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         private static final int DATABSAE_VERSION =2 ;
         private static final String DATABASE_NAME = "CounterDB.sqlite";
         private static final String TAG = "DatabaseAdapter";
-        private static DatabaseAdapter instance;
+        private static DatabaseAdapter instance = null;
         private static final String TEST_STRING = "test";
         private Context context;
 
@@ -108,6 +108,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
             //return true;
         }
+
 
         public static void exportDatabase(Context context)
         {
